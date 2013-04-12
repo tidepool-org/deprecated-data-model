@@ -1,0 +1,16 @@
+{
+  "name": "Matic Example",
+  "description": "A more complete example using Matic with sub schemas. Hopefully looking at the structure of this project will assist in beginning to work with Schema and putting together your own project file. It is suggested that you use this project as a start point for understanding how Matic works.",
+  "type": "object",
+  "properties": {
+    "personalDetails": {
+      "$ref": "includes/personalDetails.json"
+    },
+    "address": {
+      "$ref": "includes/address.json"
+    },
+    "account": {
+      "$ref": "includes/account.json"
+    }
+  }
+}
