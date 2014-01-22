@@ -4,11 +4,11 @@ mixin dl(obj, parentKey)
       if parentKey === 'properties' || parentKey === 'patternProperties'
         dt.property
           mixin required(value)
-          "#{key}":
+          | "#{key}":
       else
         dt
           mixin required(value)
-          "#{key}":
+          | "#{key}":
       if typeof value === 'object'
         dd.new-block
           mixin header(value)
