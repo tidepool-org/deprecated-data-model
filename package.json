@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/tidepool-org/data-model",
   "dependencies": {
-    "matic": "~0.3.7"
+    "matic": "~0.3.7",
+    "marked": "~0.3.1",
+    "jade": "~1.1.5"
   }
 }

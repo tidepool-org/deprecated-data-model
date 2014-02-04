@@ -1,3 +1,8 @@
 {
-  "assets": ["css", "js"]
+  "assets": ["css", "js"],
+  "template": {
+    "path": "./templates/",
+    "file": "default",
+    "lib": "jade"
+  }
 }
