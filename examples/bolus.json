@@ -1,0 +1,11 @@
+{
+    "initialDelivery": 2.9,
+    "extendedDelivery": 2.8000000000000003,
+    "value": 5.7,
+    "recommended": 5.7,
+    "deviceTime": "2014-02-04T04:49:08",
+    "duration": 14400000,
+    "extended": true,
+    "type": "bolus",
+    "id": "19bbfa82-7ee8-4f5c-a8c7-d3b9821aece3"
+}
