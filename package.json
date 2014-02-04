@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/tidepool-org/data-model/issues"
   },
-  "homepage": "https://github.com/tidepool-org/data-model"
+  "homepage": "https://github.com/tidepool-org/data-model",
+  "dependencies": {
+    "matic": "~0.3.7"
+  }
 }
