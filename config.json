@@ -1,5 +1,6 @@
 {
   "assets": ["css", "js"],
+  "folder": true,
   "template": {
     "path": "./templates/",
     "file": "default",
