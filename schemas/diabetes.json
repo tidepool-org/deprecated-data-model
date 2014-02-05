@@ -3,7 +3,7 @@
   "title": "Diabetes REcords",
   "name": "Diabetes",
   "description": "Tidepool's data model",
-  "type": "object",
+  "type": "array",
   "definitions": {
     "bolusNormal": {
       "$ref": "./bolus/pump.json"
