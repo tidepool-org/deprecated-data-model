@@ -1,0 +1,42 @@
+{
+  "type":"object",
+  "title": "Bolus",
+  "name": "bolus",
+  "description": "A normal bolus event, the simplest kind of bolus",
+  "$schema": "http://json-schema.org/draft-03/schema",
+  "id": "bolus-normal.json",
+  "required":false,
+  "properties":{
+    "deviceTime": {
+      "type":"string",
+      "id": "types/deviceTime",
+      "description": "time observed by device, ISO 8601 sans timezone",
+      "required":true
+    },
+    "recommended": {
+      "type":"number",
+      "id": "http://jsonschema.net/recommended",
+      "description": "Amount of insulin recommended by bolus wizard",
+      "required":false
+    },
+    "units": {
+      "type": "string",
+      "id": "http://jsonschema.net/type",
+      "default": "U",
+      "required": false
+    },
+    "type": {
+      "type":"string",
+      "enum": ["bolus"],
+      "id": "http://jsonschema.net/type",
+      "required":true
+    },
+    "value": {
+      "type":"number",
+      "id": "http://jsonschema.net/value",
+      "required":true
+    }
+  }
+}
+
+

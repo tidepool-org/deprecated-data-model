@@ -1,0 +1,23 @@
+{
+  "id": "/",
+  "title": "Diabetes",
+  "description": "Tidepool's data model",
+  "type": "object",
+  "definitions": {
+    "bolusNormal": {
+      "$ref": "./bolus/pump.json"
+    }
+  },
+  "properties": {
+    "body": {
+      "type": "array",
+      "items": {
+        "anyOf": { "$ref": "./bolus/normal.json" }
+      }
+
+    }
+  }
+
+
+}
+
