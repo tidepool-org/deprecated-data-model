@@ -1,0 +1,30 @@
+[
+  {
+      "initialDelivery": 2.9,
+      "extendedDelivery": 2.8000000000000003,
+      "value": 5.7,
+      "recommended": 5.7,
+      "deviceTime": "2014-02-04T04:49:08",
+      "duration": 14400000,
+      "extended": true,
+      "type": "bolus",
+      "id": "19bbfa82-7ee8-4f5c-a8c7-d3b9821aece3"
+  },
+  {
+      "recommended": 5.7,
+      "deviceTime": "2014-02-04T09:30:25",
+      "type": "bolus",
+      "id": "5182bbde-cc9a-475e-87fe-01b2149083ce",
+      "value": 5.7
+  },
+  {
+      "deviceTime": "2014-02-05T17:32:26",
+      "value": 2.9,
+      "recommended": 2.9,
+      "extendedDelivery": 2.9,
+      "duration": 3600000,
+      "extended": true,
+      "type": "bolus",
+      "id": "0cb46cab-1d4e-4242-a173-75c5859e1d1b"
+  }
+]
