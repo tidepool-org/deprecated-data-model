@@ -44,6 +44,11 @@ if (!module.parent) {
   if (input === 'completion') {
     var parsed = tabtab.parseOut(argv.help( ));
     parsed.longs.push('help');
+    parsed.longs.push('schema=diabetes');
+    parsed.longs.push('schema=carbs');
+    parsed.longs.push('schema=smbg');
+    parsed.longs.push('schema=bolus');
+    parsed.longs.push('schema=basal');
     return tabtab.complete('tidepool-validate', function(err, o) {
 
       if (err || !o) return;
