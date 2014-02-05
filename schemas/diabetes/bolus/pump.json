@@ -1,11 +1,9 @@
 {
   "type":"object",
   "title": "Bolus",
-  "name": "bolus",
+  "name": "Bolus",
   "description": "A normal bolus event, the simplest kind of bolus",
-  "$schema": "http://json-schema.org/draft-03/schema",
-  "id": "bolus-normal.json",
-  "required":false,
+  "id": "/diabetes/bolus/pump.json",
   "properties":{
     "deviceTime": {
       "type":"string",
@@ -26,7 +24,6 @@
       "required": false
     },
     "type": {
-      "type":"string",
       "enum": ["bolus"],
       "id": "http://jsonschema.net/type",
       "required":true

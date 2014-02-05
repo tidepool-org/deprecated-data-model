@@ -1,18 +1,14 @@
 {
   "id": "/",
-  "title": "Diabetes REcords",
+  "title": "Diabetes Records",
   "name": "Diabetes",
   "description": "Tidepool's data model",
+  "$schema": "http://json-schema.org/draft-03/schema",
   "type": "array",
-  "definitions": {
-    "bolusNormal": {
-      "$ref": "./bolus/pump.json"
-    }
-  },
-  "properties": {
+  "items": {
     "anyOf": [
-      { "$ref": "./diabetes/bolus/pump.json" }
-    , { "$ref": "./diabetes/carbs.json" }
+      { "$ref": "diabetes/bolus/pump.json" },
+      { "$ref": "diabetes/carbs.json" }
     ]
   }
 
