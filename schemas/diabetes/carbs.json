@@ -5,7 +5,7 @@
   "name": "carbs",
   "title": "Carbs",
   "description": "Carbohydrates eaten",
-	"required":false,
+	"required": ["deviceTime", "type", "value"],
 	"properties":{
 		"deviceTime": {
 			"type":"string",

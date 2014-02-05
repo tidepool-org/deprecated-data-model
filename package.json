@@ -19,6 +19,7 @@
   "dependencies": {
     "matic": "git://github.com/tidepool-org/matic#bewest/iterate-array",
     "marked": "~0.3.1",
-    "jade": "~1.1.5"
+    "jade": "~1.1.5",
+    "jsonschema": "~0.4.0"
   }
 }
