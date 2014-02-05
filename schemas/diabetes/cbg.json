@@ -1,28 +1,30 @@
 {
 	"type":"object",
 	"$schema": "http://json-schema.org/draft-03/schema",
-	"id": "http://jsonschema.net",
-	"required":false,
+	"id": "/diabetes/cbg.json",
+  "title": "continuous blood glucose (CBG)",
+  "name": "cbg",
+  "description": "Readings from a continuously monitoring device",
 	"properties":{
 		"deviceTime": {
 			"type":"string",
-			"id": "http://jsonschema.net/deviceTime",
-			"required":false
+			"id": "http://jsonschema.net/cbg/deviceTime",
+			"required":true
 		},
 		"id": {
 			"type":"string",
-			"id": "http://jsonschema.net/id",
+			"id": "http://jsonschema.net/cbg/id",
 			"required":false
 		},
 		"type": {
 			"type":"string",
-			"id": "http://jsonschema.net/type",
-			"required":false
+			"id": "http://jsonschema.net/type/cbg",
+			"required":true
 		},
 		"value": {
 			"type":"number",
-			"id": "http://jsonschema.net/value",
-			"required":false
+			"id": "http://jsonschema.net/cbg/value",
+			"required":true
 		}
 	}
 }

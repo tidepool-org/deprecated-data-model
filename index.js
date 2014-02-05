@@ -20,6 +20,9 @@ function getSchemaFor (o) {
     case 'carbs':
       out = diabetes.carbs;
       break;
+    case 'cbg':
+      out = diabetes.cbg;
+      break;
     case null:
     case '':
     case 'diabetes':
