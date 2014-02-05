@@ -1,6 +1,7 @@
 {
   "id": "/",
-  "title": "Diabetes",
+  "title": "Diabetes REcords",
+  "name": "Diabetes",
   "description": "Tidepool's data model",
   "type": "object",
   "definitions": {
@@ -9,14 +10,12 @@
     }
   },
   "properties": {
-    "body": {
-      "type": "array",
-      "items": {
-        "anyOf": { "$ref": "./bolus/normal.json" }
-      }
-
-    }
+    "anyOf": [
+      { "$ref": "./diabetes/bolus/pump.json" }
+    , { "$ref": "./diabetes/carbs.json" }
+    ]
   }
+
 
 
 }

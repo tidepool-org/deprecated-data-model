@@ -2,7 +2,7 @@ include ../mixins/required
 include ../mixins/header
 include ../mixins/dl
 
-each property, id in properties
+each property, id in properties || items
   section
     mixin required(property)
     h2 "#{id}":
