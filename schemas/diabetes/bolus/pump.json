@@ -19,18 +19,18 @@
     },
     "units": {
       "type": "string",
-      "id": "http://jsonschema.net/type",
+      "id": "http://jsonschema.net/type/units",
       "default": "U",
       "required": false
     },
     "type": {
       "enum": ["bolus"],
-      "id": "http://jsonschema.net/type",
+      "id": "http://jsonschema.net/type/bolus",
       "required":true
     },
     "value": {
       "type":"number",
-      "id": "http://jsonschema.net/value",
+      "id": "http://jsonschema.net/type/value/",
       "required":true
     }
   }
