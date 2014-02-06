@@ -2,7 +2,6 @@
 	"type":"object",
 	"$schema": "http://json-schema.org/draft-03/schema",
   "name": "carbs",
-  "id": "/diabetes/carbs.json",
   "title": "Carbs",
   "description": "Carbohydrates eaten",
   "definitions": {
@@ -21,7 +20,7 @@
 			"required":false
 		},
 		"type": {
-			"id": "#/definitions/type",
+			"$ref": "#/definitions/type",
 			"required":true
 		},
 		"units": {

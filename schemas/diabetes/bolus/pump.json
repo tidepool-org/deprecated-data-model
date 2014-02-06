@@ -3,7 +3,6 @@
   "title": "Bolus",
   "name": "Bolus",
   "description": "A normal bolus event, the simplest kind of bolus",
-  "id": "/diabetes/bolus/pump.json",
   "properties":{
     "deviceTime": {
       "type":"string",

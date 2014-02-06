@@ -1,7 +1,7 @@
 {
 	"type":"object",
 	"$schema": "http://json-schema.org/draft-03/schema",
-	"id": "/diabetes/cbg.json",
+	"id": "#/diabetes/cbg.json",
   "title": "continuous blood glucose (CBG)",
   "name": "cbg",
   "description": "Readings from a continuously monitoring device",
