@@ -8,5 +8,8 @@ if [[ "$TRAVIS" == "true" ]] ; then
 fi
 rm clean
 git add .
-git commit -avm "AUTOMATIC gh-pages BUILD $(date +%F)"
+STATUS=$(git status --porcelain)
+if [[ -n "${STATUS}" ]] ; then
+  git commit -avm "AUTOMATIC gh-pages BUILD $(date +%F)"
+fi
 )
