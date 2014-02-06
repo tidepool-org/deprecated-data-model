@@ -7,7 +7,7 @@ if [ ! -d ./web/ ] ; then
   fi
   mkdir web
   pwd
-  git clone --branch gh-pages $GIT_URL web/ 2>&1 /dev/null
+  git clone --branch gh-pages $GIT_URL web/
   echo "./web initialized"
   
 else
