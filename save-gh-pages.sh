@@ -4,7 +4,7 @@
 echo "add build results to gh-pages"
 cd web/
 if [[ "$TRAVIS" == "true" ]] ; then
-  ./travis-setup.sh
+  ../travis-setup.sh
 fi
 rm clean
 git add .
