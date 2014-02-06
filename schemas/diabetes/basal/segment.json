@@ -9,7 +9,7 @@
 	"properties":{
 		"delivered": {
 			"type":"number",
-			"id": "http://jsonschema.net/delivered",
+			"id": "http://jsonschema.net/basal/segment/delivered",
 			"required":true
 		},
 		"deliveryType": {
@@ -18,7 +18,7 @@
 		},
 		"end": {
 			"type":"string",
-			"id": "http://jsonschema.net/end",
+			"id": "http://jsonschema.net/basal/segment/end",
 			"required":true
 		},
 		"inferred": {
@@ -29,12 +29,12 @@
 		},
 		"id": {
 			"type":"string",
-			"id": "http://jsonschema.net/id",
+			"id": "http://jsonschema.net//basal/segment/id",
 			"required":false
 		},
 		"start": {
 			"type":"string",
-			"id": "http://jsonschema.net/start",
+			"id": "http://jsonschema.net//basal/segment/start",
 			"required":true
 		},
 		"type": {
@@ -43,7 +43,7 @@
 		},
 		"value": {
 			"type":"number",
-			"id": "http://jsonschema.net/value",
+			"id": "http://jsonschema.net//basal/segment/value",
 			"required":true
 		}
 	}

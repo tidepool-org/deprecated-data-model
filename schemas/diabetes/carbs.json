@@ -4,6 +4,7 @@
   "name": "carbs",
   "title": "Carbs",
   "description": "Carbohydrates eaten",
+  "id": "carbs.json",
   "definitions": {
       "type": { "enum": [ "carbs" ] }
   },

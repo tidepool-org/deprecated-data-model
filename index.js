@@ -47,7 +47,7 @@ function create (opts) {
   function importMissing ( ) {
     var missing = validator.unresolvedRefs.shift( );
     if (!missing) { return; };
-    if (/^\/diabetes/g.test(missing)) {
+    if (/^\/diabetes.*.json$/g.test(missing)) {
       var p = './schemas' + missing;
       var S = require(p);
       validator.addSchema(S, missing);

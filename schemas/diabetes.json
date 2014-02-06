@@ -9,6 +9,8 @@
       { "$ref": "diabetes/bolus/pump.json" },
       { "$ref": "diabetes/carbs.json" },
       { "$ref": "diabetes/cbg.json" },
+      { "$ref": "diabetes/basal/segment.json" },
+      { "$ref": "diabetes/basal/temp.json" },
       { "$ref": "diabetes/smbg.json" }
     ]
   }

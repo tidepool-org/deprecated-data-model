@@ -21,7 +21,11 @@ function main (opts) {
     var report = results.pop( );
     var status = util.format("OK: %d valid records", report.instance.length || results.length + 1);
     if (report.errors.length > 0) {
-      status = util.format("Errors:", report.errors);
+      status = util.format("Errors:", report.errors.length);
+      report.errors.forEach(function (err) {
+        console.log(err);
+      })
+
     }
     console.log(status);
   }
