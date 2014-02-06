@@ -1,7 +1,7 @@
 {
   "assets": ["css", "js"],
-  "folder": true,
   "template": {
+    "folder": true,
     "path": "./templates/",
     "file": "default",
     "lib": "jade"

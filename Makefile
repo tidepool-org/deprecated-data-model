@@ -6,3 +6,5 @@ build:
 
 test:
 	${MOCHA} -R tap ${TESTS}
+
+.PHONY: build test
