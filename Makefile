@@ -8,12 +8,14 @@ TARGETS=$(addprefix web/,${SCHEMAS})
 
 build: ${TARGETS}
 	${MATIC}
+	rm -Rf web/schemas
+	cp -rv schemas web/schemas
 
 web:
 	./prep_build.sh
 
 web/schemas/%: schemas/%
-	install -D $< $@
+	# install -D $< $@
 
 clean:
 	rm -Rf web/
