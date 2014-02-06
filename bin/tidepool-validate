@@ -35,8 +35,13 @@ function main (opts) {
 if (!module.parent) {
   var argv = require('optimist');
   var tabtab = require('tabtab');
-  argv = argv
-       .usage("$0 [opts] <incoming.json|->")
+  var path = require('path');
+  var fs = require('fs');
+  var args = process.argv.slice(1);
+  var proc = path.basename(args.shift( ));
+  var usage = fs.readFileSync(path.join(__dirname, 'usage.txt'));
+  argv = argv(args)
+       .usage("$0 [opts] <incoming.json|->" + usage)
        .options('s', { alias: 'schema'
          , describe: 'Schema definition'
          })
@@ -50,10 +55,11 @@ if (!module.parent) {
     parsed.longs.push('help');
     parsed.longs.push('schema=diabetes');
     parsed.longs.push('schema=any');
-    parsed.longs.push('schema=carbs');
-    parsed.longs.push('schema=smbg');
-    parsed.longs.push('schema=bolus');
     parsed.longs.push('schema=basal');
+    parsed.longs.push('schema=bolus');
+    parsed.longs.push('schema=carbs');
+    parsed.longs.push('schema=cbg');
+    parsed.longs.push('schema=smbg');
     return tabtab.complete('tidepool-validate', function(err, o) {
 
       if (err || !o) return;

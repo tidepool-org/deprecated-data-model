@@ -1,0 +1,8 @@
+
+Schemas:
+  * diabetes/all - An array containing any of the following elements:
+  * carbs - carbohydrates eaten
+  * basal - inferred, temp, scheduled
+  * bolus - wizard/normal, dual, square
+  * smbg - self monitored blood glucose, eg a meter finger stick
+  * cbg - data from a continous monitoring device
