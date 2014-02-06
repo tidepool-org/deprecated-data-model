@@ -1,7 +1,9 @@
 #!/bin/bash
 
 # remove everything from
-cd web/
+(cd web/
+git status
 git rm -r .
 touch clean
+)
 
