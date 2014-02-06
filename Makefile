@@ -2,11 +2,18 @@ MATIC=./node_modules/.bin/matic
 MOCHA=./node_modules/.bin/mocha
 TESTS=tests/test_one*
 
-build:
+SCHEMAS=$(shell find schemas -type f -name "*.json")
+TARGETS=$(addprefix web/,${SCHEMAS})
+
+
+build: ${TARGETS}
 	${MATIC}
 
 web:
 	./prep_build.sh
+
+web/schemas/%: schemas/%
+	install -D $< $@
 
 clean:
 	rm -Rf web/
