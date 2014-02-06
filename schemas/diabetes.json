@@ -3,7 +3,7 @@
   "title": "Diabetes Records",
   "name": "Diabetes",
   "description": "Tidepool's data model.",
-  "$schema": "http://json-schema.org/draft-03/schema",
+  "$schema": "http://json-schema.org/draft-03/schema#",
   "type": "array",
   "items": {
     "anyOf": [

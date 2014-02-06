@@ -10,6 +10,12 @@ var schema = require('./schemas/diabetes.json');
 
 function getSchemaFor (o) {
   var out = o;
+  if (!o) {
+    return schema;
+  }
+  if (o && o.title && o['$schema']) {
+    return o;
+  }
   switch (o) {
     case 'bolus':
       out = diabetes.bolusNormal;
@@ -67,7 +73,7 @@ function stream (validate) {
   var S;
   function writer (data) {
     var self = this;
-    self.queue(validate(data, schema));
+    self.queue(validate(data));
   }
   return out;
 }

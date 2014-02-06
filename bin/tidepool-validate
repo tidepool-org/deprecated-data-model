@@ -45,6 +45,7 @@ if (!module.parent) {
     var parsed = tabtab.parseOut(argv.help( ));
     parsed.longs.push('help');
     parsed.longs.push('schema=diabetes');
+    parsed.longs.push('schema=any');
     parsed.longs.push('schema=carbs');
     parsed.longs.push('schema=smbg');
     parsed.longs.push('schema=bolus');
