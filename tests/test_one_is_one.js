@@ -27,11 +27,11 @@ describe("each sample has a schema", function ( ) {
     var S = require(p);
     var validate = V({schema: S});
     var i = instanceFor(type);
+
     it(type + ' should validate the sample', function ( ) {
       var report = validate(i);
       report.should.be.ok;
       report.errors.should.be.empty;
-
     });
 
     types.forEach(function (other) {
@@ -39,14 +39,16 @@ describe("each sample has a schema", function ( ) {
         var otherSchema = require(pathFor(other));
         var otherValidate = V({schema: otherSchema});
         var otherInstance = instanceFor(other);
-        var name = util.format("schema %s should cause instance %s to fail", type, other);
+        var fmt = "schema %s should cause instance %s to fail";
+        var name = util.format(fmt, type, other);
         it(name, function ( ) {
           var report = validate(otherInstance);
           console.log(report);
           report.should.be.ok;
           report.errors.should.not.be.empty;
         });
-        name = util.format("schema %s should cause instance %s to fail", other, type);
+
+        name = util.format(fmt, other, type);
         it(name, function ( ) {
           var report = otherValidate(i);
           console.log(report);
