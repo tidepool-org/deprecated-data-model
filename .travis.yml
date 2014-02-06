@@ -1,0 +1,7 @@
+language: node_js
+before_script: ./prep_build.sh
+script: make travis
+after_script: ./publish-gh-pages.sh
+env:
+  global:
+    secure: ZPM5/3ccyrFxFzHQxTU9uz/XVPkVwrwXDSLe04exi02jouX2mbim6ynjhOrc2DSzSXxU7jQ8YNCnOtlmno0jNbUocThH9aTd0U9iRt3UviL9A2T8Y9AGyacPkkW/ehueX5RGIaBaOJd7QvOTnu8uhlH7LXS7PZbAqMI1NFHcDGE=
