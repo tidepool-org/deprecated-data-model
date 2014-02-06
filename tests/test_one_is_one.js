@@ -1,7 +1,7 @@
 var should = require('should');
 var util = require('util');
 
-describe("each sample has a schema", function ( ) {
+describe("validator schema", function ( ) {
   var types = [
       // 'basal-inferred.json'
       'basal-segment.json'
@@ -39,11 +39,10 @@ describe("each sample has a schema", function ( ) {
         var otherSchema = require(pathFor(other));
         var otherValidate = V({schema: otherSchema});
         var otherInstance = instanceFor(other);
-        var fmt = "schema %s should cause instance %s to fail";
+        var fmt = "%s should cause instance %s to fail";
         var name = util.format(fmt, type, other);
         it(name, function ( ) {
           var report = validate(otherInstance);
-          console.log(report);
           report.should.be.ok;
           report.errors.should.not.be.empty;
         });
@@ -51,7 +50,6 @@ describe("each sample has a schema", function ( ) {
         name = util.format(fmt, other, type);
         it(name, function ( ) {
           var report = otherValidate(i);
-          console.log(report);
           report.should.be.ok;
           report.errors.should.not.be.empty;
         });
