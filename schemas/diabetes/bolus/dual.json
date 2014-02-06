@@ -1,29 +1,28 @@
 {
 	"type":"object",
 	"$schema": "http://json-schema.org/draft-03/schema",
-	"id": "/diabetes/bolus/dual.json",
   "title": "Dual wave bolus",
-	"required":false,
+  "additionalProperties": false,
 	"properties":{
 		"deviceTime": {
 			"type":"string",
 			"id": "http://jsonschema.net/deviceTime",
-			"required":false
+			"required":true
 		},
 		"duration": {
 			"type":"number",
 			"id": "http://jsonschema.net/duration",
-			"required":false
+			"required":true
 		},
 		"extendedDelivery": {
 			"type":"number",
 			"id": "http://jsonschema.net/extendedDelivery",
-			"required":false
+			"required":true
 		},
 		"extended": {
 			"type":"boolean",
 			"id": "http://jsonschema.net/extended",
-			"required":false
+			"required":true
 		},
 		"id": {
 			"type":"string",
@@ -33,22 +32,21 @@
 		"initialDelivery": {
 			"type":"number",
 			"id": "http://jsonschema.net/initialDelivery",
-			"required":false
+			"required":true
 		},
 		"recommended": {
 			"type":"number",
 			"id": "http://jsonschema.net/recommended",
-			"required":false
+			"required":true
 		},
 		"type": {
-			"type":"string",
-			"id": "http://jsonschema.net/type",
-			"required":false
+			"enum": ["bolus", "bolus-dual"],
+			"required":true
 		},
 		"value": {
 			"type":"number",
 			"id": "http://jsonschema.net/value",
-			"required":false
+			"required":true
 		}
 	}
 }

@@ -5,6 +5,7 @@
 	"name": "basal-temp",
 	"title": "Basal temp",
 	"description": "A temporary basal rate delivered over a span of time.",
+  "additionalProperties": false,
 	"properties":{
 		"delivered": {
 			"type":"number",
@@ -12,8 +13,7 @@
 			"required":true
 		},
 		"deliveryType": {
-			"type":"string",
-			"id": "http://jsonschema.net/basal/temp/deliveryType",
+      "enum": [ "temp" ],
 			"required":true
 		},
 		"end": {

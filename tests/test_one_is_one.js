@@ -3,8 +3,8 @@ var util = require('util');
 
 describe("each sample has a schema", function ( ) {
   var types = [
-      'basal-inferred.json'
-    , 'basal-segment.json'
+      // 'basal-inferred.json'
+      'basal-segment.json'
     , 'basal-temp.json'
     , 'bolus-dual.json'
     , 'bolus-normal.json'

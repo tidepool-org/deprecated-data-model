@@ -3,8 +3,10 @@
 	"$schema": "http://json-schema.org/draft-03/schema",
 	"id": "#/diabetes/cbg.json",
   "title": "continuous blood glucose (CBG)",
-  "name": "cbg",
   "description": "Readings from a continuously monitoring device",
+  "definitions": {
+      "type": { "enum": [ "cbg" ] }
+  },
 	"properties":{
 		"deviceTime": {
 			"type":"string",
@@ -18,7 +20,7 @@
 		},
 		"type": {
 			"type":"string",
-			"id": "http://jsonschema.net/type/cbg",
+			"$ref": "#/definitions/type",
 			"required":true
 		},
 		"value": {

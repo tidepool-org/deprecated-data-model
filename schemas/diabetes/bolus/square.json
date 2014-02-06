@@ -3,6 +3,7 @@
 	"$schema": "http://json-schema.org/draft-03/schema",
 	"id": "bolus-square.json",
   "title": "Square wave bolus",
+  "additionalProperties": false,
 	"properties":{
 		"deviceTime": {
 			"type":"string",

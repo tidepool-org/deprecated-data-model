@@ -5,11 +5,15 @@
   "title": "SMBG",
   "name": "smbg",
   "description": "Self monitored blood glucose, eg finger stick",
+  "additionalProperties": false,
+  "definitions": {
+      "type": { "enum": [ "smbg" ] }
+  },
 	"properties":{
 		"deviceTime": {
 			"type":"string",
 			"id": "http://jsonschema.net/deviceTime",
-			"required":false
+			"required":true
 		},
 		"id": {
 			"type":"string",
@@ -17,9 +21,8 @@
 			"required":false
 		},
 		"type": {
-			"type":"string",
-			"id": "http://jsonschema.net/type",
-			"required":false
+			"$ref": "#/definitions/type",
+			"required":true
 		},
 		"value": {
 			"type":"number",

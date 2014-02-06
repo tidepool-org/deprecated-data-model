@@ -29,7 +29,8 @@
 		"inferred": {
 			"type":"boolean",
 			"id": "http://jsonschema.net/inferred",
-			"required":false
+      "default": true,
+			"required":true
 		},
 		"start": {
 			"type":"string",
@@ -37,9 +38,7 @@
 			"required":true
 		},
 		"type": {
-			"type":"string",
-      "enum": [ "basal-rate-segment" ],
-			"id": "http://jsonschema.net/basal/type",
+      "enum": [ "basal-rate-segment", "basal-rate-change" ],
 			"required":true
 		},
 		"value": {

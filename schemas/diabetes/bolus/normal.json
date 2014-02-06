@@ -3,12 +3,12 @@
 	"$schema": "http://json-schema.org/draft-03/schema",
 	"id": "/diabetes/bolus/normal.json",
   "title": "Normal bolus",
-	"required":false,
+  "additionalProperties": false,
 	"properties":{
 		"deviceTime": {
 			"type":"string",
 			"id": "http://jsonschema.net/deviceTime",
-			"required":false
+			"required":true
 		},
 		"id": {
 			"type":"string",
@@ -18,17 +18,16 @@
 		"recommended": {
 			"type":"number",
 			"id": "http://jsonschema.net/recommended",
-			"required":false
+			"required":true
 		},
 		"type": {
-			"type":"string",
-			"id": "http://jsonschema.net/type",
-			"required":false
+			"enum": ["bolus", "bolus-dual"],
+			"required":true
 		},
 		"value": {
 			"type":"number",
 			"id": "http://jsonschema.net/value",
-			"required":false
+			"required":true
 		}
 	}
 }
