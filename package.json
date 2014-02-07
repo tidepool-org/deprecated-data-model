@@ -1,5 +1,5 @@
 {
-  "name": "data-model",
+  "name": "tidepool-data-model",
   "version": "0.0.0",
   "description": "Tidepool's data model",
   "main": "index.js",
