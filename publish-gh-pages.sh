@@ -1,9 +1,16 @@
 #!/bin/bash
 
-echo "$TRAVIS_BRANCH from $TRAVIS_REPO_SLUG"
-if [[ -n "$TRAVIS" && "$TRAVIS_REPO_SLUG" != "tidepool-org/data-model" && "$TRAVIS_BRANCH" != "master" ]]; then
-echo $TRAVIS_BRANCH should not update gh-pages, only master
-exit 0;
+if [[ "$TRAVIS" == "true" ]] ; then
+  echo "$TRAVIS_BRANCH from $TRAVIS_REPO_SLUG"
+  if [[ "$TRAVIS_REPO_SLUG" == "tidepool-org/data-model" ]] ; then
+    if [[ "$TRAVIS_BRANCH" != "master" ]] ; then
+      echo "gh-pages should only update from master"
+      exit 0;
+    fi
+  else
+    echo "only origin should update gh-pages"
+    exit 0;
+  fi
 
 fi
 echo "push build results to gh-pages"
