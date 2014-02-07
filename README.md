@@ -4,7 +4,59 @@ data-model
 Hosting data files, example code, and documentation for Tidepool's
 data model.
 
-[Document outline the current data model thoughts](https://docs.google.com/a/tidepool.org/document/d/1S04g5t_NGs63O6lnJ6eoBJDwt-NESqON8A_EY-Rew9c/edit)
+## Install
+[![Build Status](https://travis-ci.org/tidepool-org/data-model.png?branch=master)](https://travis-ci.org/tidepool-org/data-model)
+
+```bash
+npm install tidepool-data-model
+```
+
+## Use 
+
+```bash
+$ tidepool-validate --help
+node ./bin/tidepool-validate [opts] <incoming.json|->
+Schemas:
+  * diabetes/all - An array containing any of the following elements:
+  * carbs - carbohydrates eaten
+  * basal - inferred, temp, scheduled
+  * bolus - wizard/normal, dual, square
+  * smbg - self monitored blood glucose, eg a meter finger stick
+  * cbg - data from a continous monitoring device
+
+
+Options:
+  -s, --schema  Schema definition
+```
+
+```bash
+$ ./node_modules/.bin/tidepool-validate --schema=diabetes examples/mixed/all.json
+OK: 15 valid records
+```
+
+```bash
+$ ./node_modules/.bin/tidepool-validate --schema=bolus examples/one/carbs.json
+{ property: 'instance',
+  message: 'Property units does not exist in the schema',
+  schema: '/diabetes/bolus/normal.json',
+  instance: 
+   { units: 'grams',
+     deviceTime: '2014-02-04T04:46:08',
+     type: 'carbs',
+     id: '18c4d7ac-4ec5-4de2-8bb4-1ccb95772d74',
+     value: 85 },
+  stack: 'instance Property units does not exist in the schema' }
+{ property: 'instance.recommended',
+  message: 'is required',
+  schema: 'http://jsonschema.net/recommended',
+  stack: 'instance.recommended is required' }
+{ property: 'instance.type',
+  message: 'is not one of enum values: bolus,bolus-dual',
+  schema: { enum: [ 'bolus', 'bolus-dual' ], required: true },
+  instance: 'carbs',
+  stack: 'instance.type is not one of enum values: bolus,bolus-dual' }
+Errors: 3
+```
 
 ## [Tidepool diabetes data bus](http://tidepool-org.github.io/data-model/)
 
