@@ -1,0 +1,10 @@
+{
+    "delivered": 1.0,
+    "end": "2014-03-07T07:18:02",
+    "deliveryType": "scheduled",
+    "inferred": true,
+    "value": 1.0,
+    "start": "2014-03-07T06:00:00",
+    "type": "basal-rate-segment",
+    "id": "8490c2ea-ea91-4324-9a16-87582b2bab73"
+}

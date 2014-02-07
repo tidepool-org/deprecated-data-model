@@ -1,0 +1,10 @@
+{
+    "deviceTime": "2014-02-05T17:32:26",
+    "value": 2.9,
+    "recommended": 2.9,
+    "extendedDelivery": 2.9,
+    "duration": 3600000,
+    "extended": true,
+    "type": "bolus",
+    "id": "0cb46cab-1d4e-4242-a173-75c5859e1d1b"
+}

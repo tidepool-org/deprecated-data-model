@@ -1,0 +1,93 @@
+#!/usr/bin/env node
+
+var createValidator = require('../');
+var fs = require('fs');
+var es = require('event-stream');
+var path = require('path');
+var util = require('util');
+
+function main (opts) {
+
+  var datum = createValidator(opts);
+  var incoming = opts.input;
+  if (incoming == '-' || !incoming) {
+    incoming = process.stdin;
+    incoming.resume( );
+  } else {
+    incoming = fs.createReadStream(incoming);
+  }
+  es.pipeline(incoming, es.parse( ), createValidator.stream(datum), es.writeArray(done));
+  function done (err, results) {
+    var report = results.pop( );
+    var status = util.format("OK: %d valid records", report.instance.length || results.length + 1);
+    if (report.errors.length > 0) {
+      status = util.format("Errors:", report.errors.length);
+      report.errors.forEach(function (err) {
+        console.log(err);
+      })
+
+    }
+    console.log(status);
+  }
+
+}
+
+if (!module.parent) {
+  var argv = require('optimist');
+  var tabtab = require('tabtab');
+  var path = require('path');
+  var fs = require('fs');
+  var args = process.argv.slice(1);
+  var proc = path.basename(args.shift( ));
+  var usage = fs.readFileSync(path.join(__dirname, 'usage.txt'));
+  argv = argv(args)
+       .usage("$0 [opts] <incoming.json|->" + usage)
+       .options('s', { alias: 'schema'
+         , describe: 'Schema definition'
+         })
+       ;
+  var opts = argv.argv;
+  var input = opts._.shift( );
+  opts.input = input;
+
+  if (input === 'completion') {
+    var parsed = tabtab.parseOut(argv.help( ));
+    parsed.longs.push('help');
+    parsed.longs.push('schema=diabetes');
+    parsed.longs.push('schema=any');
+    parsed.longs.push('schema=basal');
+    parsed.longs.push('schema=bolus');
+    parsed.longs.push('schema=carbs');
+    parsed.longs.push('schema=cbg');
+    parsed.longs.push('schema=smbg');
+    return tabtab.complete('tidepool-validate', function(err, o) {
+
+      if (err || !o) return;
+
+      if (!parsed) { return; }
+      if (o.last) {
+        if (o.last == '--') {
+          return tabtab.log(parsed.longs, o, '--');
+        }
+        if (o.last == '-') {
+          tabtab.log(parsed.longs, o, '--');
+          return tabtab.log(parsed.shorts, o, '-');
+        }
+
+      }
+      if (/--\w?/g.test(o.last)) tabtab.log(parsed.longs, o, '--');
+      if (/^-\w?/.test(o.last)) tabtab.log(parsed.shorts, o, '-');
+
+    });
+    if (tabtab.isComplete( )) {
+      return;
+    }
+  }
+
+  if (!opts.input) {
+    argv.showHelp( );
+    process.exit(1);
+  }
+  main(opts);
+}
+

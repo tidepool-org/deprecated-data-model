@@ -1,0 +1,49 @@
+{
+	"type":"object",
+	"$schema": "http://json-schema.org/draft-03/schema",
+	"id": "bolus-square.json",
+  "title": "Square wave bolus",
+  "additionalProperties": false,
+	"properties":{
+		"deviceTime": {
+			"type":"string",
+			"id": "http://jsonschema.net/bolus/square/deviceTime",
+			"required":true
+		},
+		"duration": {
+			"type":"number",
+			"id": "http://jsonschema.net/bolus/square/duration",
+			"required":true
+		},
+		"extendedDelivery": {
+			"type":"number",
+			"id": "http://jsonschema.net/bolus/square/extendedDelivery",
+			"required":true
+		},
+		"extended": {
+			"type":"boolean",
+			"id": "http://jsonschema.net/bolus/square/extended",
+			"required":true
+		},
+		"id": {
+			"type":"string",
+			"id": "http://jsonschema.net/bolus/square/id",
+			"required":false
+		},
+		"recommended": {
+			"type":"number",
+			"id": "http://jsonschema.net/bolus/square/recommended",
+			"required":true
+		},
+		"type": {
+			"enum": [ "bolus", "bolus-square" ],
+			"id": "http://jsonschema.net/bolus/square/type",
+			"required":true
+		},
+		"value": {
+			"type":"number",
+			"id": "http://jsonschema.net/bolus/square/value",
+			"required":true
+		}
+	}
+}

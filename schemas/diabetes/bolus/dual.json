@@ -1,0 +1,52 @@
+{
+	"type":"object",
+	"$schema": "http://json-schema.org/draft-03/schema",
+  "title": "Dual wave bolus",
+  "additionalProperties": false,
+	"properties":{
+		"deviceTime": {
+			"type":"string",
+			"id": "http://jsonschema.net/deviceTime",
+			"required":true
+		},
+		"duration": {
+			"type":"number",
+			"id": "http://jsonschema.net/duration",
+			"required":true
+		},
+		"extendedDelivery": {
+			"type":"number",
+			"id": "http://jsonschema.net/extendedDelivery",
+			"required":true
+		},
+		"extended": {
+			"type":"boolean",
+			"id": "http://jsonschema.net/extended",
+			"required":true
+		},
+		"id": {
+			"type":"string",
+			"id": "http://jsonschema.net/id",
+			"required":false
+		},
+		"initialDelivery": {
+			"type":"number",
+			"id": "http://jsonschema.net/initialDelivery",
+			"required":true
+		},
+		"recommended": {
+			"type":"number",
+			"id": "http://jsonschema.net/recommended",
+			"required":true
+		},
+		"type": {
+			"enum": ["bolus", "bolus-dual"],
+			"required":true
+		},
+		"value": {
+			"type":"number",
+			"id": "http://jsonschema.net/value",
+			"required":true
+		}
+	}
+}
