@@ -4,4 +4,4 @@ script: make travis
 after_script: ./publish-gh-pages.sh
 env:
   global:
-    secure: ZPM5/3ccyrFxFzHQxTU9uz/XVPkVwrwXDSLe04exi02jouX2mbim6ynjhOrc2DSzSXxU7jQ8YNCnOtlmno0jNbUocThH9aTd0U9iRt3UviL9A2T8Y9AGyacPkkW/ehueX5RGIaBaOJd7QvOTnu8uhlH7LXS7PZbAqMI1NFHcDGE=
+    secure: O7KpKbpQUXiRCw4HbFxSkGQ0OWfZQvtBn3hGOd6y1CP5HCgUQFTksGX85zn4h5fSo6mFerFlzB4yF7Hr4nIkOnG3nLmY+/NdjURku7Jv8ZYbZbo7hWCNM4H3oSWfW2+7jPEBMLOedO6H75HdECTlgxecg1MxLKhhZLoXOdU3hnY=
