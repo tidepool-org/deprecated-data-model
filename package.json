@@ -1,6 +1,6 @@
 {
   "name": "tidepool-data-model",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Tidepool's data model",
   "main": "index.js",
   "scripts": {
