@@ -1,8 +1,10 @@
 
 Schemas:
-  * diabetes/all - An array containing any of the following elements:
-  * carbs - carbohydrates eaten
-  * basal - inferred, temp, scheduled
-  * bolus - wizard/normal, dual, square
-  * smbg - self monitored blood glucose, eg a meter finger stick
-  * cbg - data from a continous monitoring device
+  --schema=diabetes
+  --schema=all      An array containing any of the following elements:
+  --schema=carbs    carbohydrates eaten
+  --schema=basal    inferred, temp, scheduled
+  --schema=bolus    wizard/normal, dual, square
+  --schema=smbg     self monitored blood glucose, eg a meter finger stick
+  --schema=cbg      data from a continous monitoring device
+  --schema=message  A message about therapy on the diabetes data bus.

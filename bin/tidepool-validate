@@ -74,6 +74,7 @@ if (!module.parent) {
     parsed.longs.push('schema=carbs');
     parsed.longs.push('schema=cbg');
     parsed.longs.push('schema=smbg');
+    parsed.longs.push('schema=message');
     return tabtab.complete('tidepool-validate', function(err, o) {
 
       if (err || !o) return;

@@ -5,7 +5,7 @@ var jsonschema = require('jsonschema')
   , util = require('util')
   ;
 
-var diabetes = require('./schemas/diabetes/');
+var diabetes = require('./lib/');
 var schema = require('./schemas/diabetes.json');
 
 function getSchemaFor (o) {
@@ -28,6 +28,9 @@ function getSchemaFor (o) {
       break;
     case 'cbg':
       out = diabetes.cbg;
+      break;
+    case 'message':
+      out = diabetes.message;
       break;
     case null:
     case '':

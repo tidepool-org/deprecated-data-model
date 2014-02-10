@@ -4,17 +4,18 @@ var util = require('util');
 describe("validator schema", function ( ) {
   var types = [
       // 'basal-inferred.json'
-      'basal-segment.json'
-    , 'basal-temp.json'
-    , 'bolus-dual.json'
-    , 'bolus-normal.json'
-    , 'bolus-square.json'
-    , 'carbs.json'
-    , 'cbg.json'
-    , 'smbg.json'
+      'diabetes/basal-segment.json'
+    , 'diabetes/basal-temp.json'
+    , 'diabetes/bolus-dual.json'
+    , 'diabetes/bolus-normal.json'
+    , 'diabetes/bolus-square.json'
+    , 'diabetes/carbs.json'
+    , 'diabetes/cbg.json'
+    , 'diabetes/smbg.json'
+    , 'message.json'
   ];
   function pathFor (t) {
-    var p = '../schemas/diabetes/' + t.replace('-', '/');
+    var p = '../schemas/' + t.replace('-', '/');
     return p;
   }
   function instanceFor (t) {
