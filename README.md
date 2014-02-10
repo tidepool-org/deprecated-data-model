@@ -7,11 +7,35 @@ data model.
 ## Install
 [![Build Status](https://travis-ci.org/tidepool-org/data-model.png?branch=master)](https://travis-ci.org/tidepool-org/data-model)
 
+### Add as dependency
 ```bash
 npm install tidepool-data-model
+$ ./node_modules/.bin/tidepool-validate --help
+# global install
+$ npm install -g tidepool-data-model
+$ tidepool-validate --help
+```
+
+### Install from source
+```bash
+$ git clone git://github.com/tidepool-org/data-model.git
+$ cd data-model
+$ npm install
+$ ./bin/tidepool-validate --help
 ```
 
 ## Use 
+
+#### Tab completion
+Install tab completion:
+```bash
+$ . <(tidepool-validate completion)
+```
+
+#### Help
+`tidepool-validate completion` prints a shell script to provide shell
+tab completion so you can tab complete the schema types.  The above
+snippet sources the script into your current shell.
 
 ```bash
 $ tidepool-validate --help
@@ -28,12 +52,13 @@ Schemas:
 Options:
   -s, --schema  Schema definition
 ```
-
+##### Valid
 ```bash
 $ ./node_modules/.bin/tidepool-validate --schema=diabetes examples/mixed/all.json
 OK: 15 valid records
 ```
 
+##### Invalid
 ```bash
 $ ./node_modules/.bin/tidepool-validate --schema=bolus examples/one/carbs.json
 { property: 'instance',
