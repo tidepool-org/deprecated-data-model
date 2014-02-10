@@ -56,13 +56,14 @@ if (!module.parent) {
   var usage = fs.readFileSync(path.join(__dirname, 'usage.txt'));
   argv = argv(args)
        .usage("$0 [opts] <incoming.json|->" + usage)
+       .options('h', { alias: 'help' })
        .options('s', { alias: 'schema'
          , describe: 'Schema definition'
          })
        ;
   var opts = argv.argv;
   var input = opts._.shift( );
-  opts.input = input;
+  opts.input = input ? input : (process.stdin.isTTY != true) ? '-': false;
 
   if (input === 'completion') {
     var parsed = tabtab.parseOut(argv.help( ));
@@ -99,7 +100,7 @@ if (!module.parent) {
     }
   }
 
-  if (!opts.input) {
+  if (!opts.input || opts.h) {
     argv.showHelp( );
     process.exit(1);
   }

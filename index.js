@@ -83,7 +83,7 @@ function stream (validate) {
 
 if (!module.parent) {
   var validator = create( );
-  var incoming = process.argv[2];
+  var incoming = process.argv.slice(2).shift( ) || '-';
   if (incoming == '-' || !incoming) {
     incoming = process.stdin;
     incoming.resume( );
