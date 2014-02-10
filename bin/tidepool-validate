@@ -16,7 +16,7 @@ function main (opts) {
   } else {
     incoming = fs.createReadStream(incoming);
   }
-  es.pipeline(incoming, es.parse( ), createValidator.stream(datum), es.writeArray(done));
+  es.pipeline(incoming, json( ), createValidator.stream(datum), es.writeArray(done));
   function done (err, results) {
     var report = results.pop( );
     var status = util.format("OK: %d valid records", report.instance.length || results.length + 1);
@@ -30,6 +30,20 @@ function main (opts) {
     console.log(status);
   }
 
+}
+
+function json ( ) {
+  var incoming = es.through(write, end);
+  var raw = [ ];
+  function write (data) {
+    raw.push(data);
+  }
+  function end ( ) {
+    var r = JSON.parse(raw.join(new Buffer('')));
+    this.emit('data', r);
+    this.emit('end');
+  }
+  return incoming;
 }
 
 if (!module.parent) {
