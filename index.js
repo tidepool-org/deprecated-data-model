@@ -20,6 +20,9 @@ function getSchemaFor (o) {
     case 'bolus':
       out = diabetes.bolusNormal;
       break;
+    case 'basal':
+      out = diabetes.basal;
+      break;
     case 'smbg':
       out = diabetes.smbg;
       break;
