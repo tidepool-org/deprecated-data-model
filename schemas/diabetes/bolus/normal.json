@@ -25,9 +25,14 @@
 			"required":true
 		},
 		"value": {
-			"type":"number",
-			"id": "http://jsonschema.net/value",
+			"type": ["string", "number"],
+			"id": "http://jsonschema.net/bolus/value",
 			"required":true
+		},
+		"bolus": {
+			"type":"number",
+			"id": "http://jsonschema.net/bolus/value/bolus",
+			"required":false
 		}
 	}
 }

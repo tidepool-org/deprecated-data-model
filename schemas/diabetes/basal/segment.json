@@ -5,7 +5,7 @@
   "name": "basal-segment",
   "title": "Basal segment",
   "description": "Basal segment - basal rate delivered over a time span.",
-  "additionalProperties": false,
+  "additionalProperties": true,
 	"properties":{
 		"delivered": {
 			"type":"number",
@@ -22,14 +22,13 @@
 			"required":true
 		},
 		"inferred": {
-			"type":"boolean",
+			"enum": [ true, false ],
 			"id": "http://jsonschema.net/segment/inferred",
-      "default": false,
 			"required":false
 		},
 		"id": {
 			"type":"string",
-			"id": "http://jsonschema.net//basal/segment/id",
+			"id": "http://jsonschema.net/basal/segment/id",
 			"required":false
 		},
 		"start": {
