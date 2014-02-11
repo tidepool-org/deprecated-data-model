@@ -5,7 +5,7 @@ var jsonschema = require('jsonschema')
   , util = require('util')
   ;
 
-var diabetes = require('./schemas/diabetes/');
+var diabetes = require('./lib/');
 var schema = require('./schemas/diabetes.json');
 
 function getSchemaFor (o) {
@@ -29,6 +29,9 @@ function getSchemaFor (o) {
     case 'cbg':
       out = diabetes.cbg;
       break;
+    case 'message':
+      out = diabetes.message;
+      break;
     case null:
     case '':
     case 'diabetes':
@@ -39,6 +42,9 @@ function getSchemaFor (o) {
   return out;
 }
 
+var base = 'http://tidepool-org.github.io/data-model/schemas/';
+// 'diabetes/bolus/pump.json'
+
 function create (opts) {
   opts = opts || { };
   var validator = new jsonschema.Validator( );
@@ -47,10 +53,25 @@ function create (opts) {
   function importMissing ( ) {
     var missing = validator.unresolvedRefs.shift( );
     if (!missing) { return; };
-    if (/^\/diabetes.*.json$/g.test(missing)) {
-      var p = './schemas' + missing;
+    missing = missing.replace(base, '');
+    var after = missing.split('#');
+    var hash = false;
+    if (after.length > 1) {
+      hash = true;
+      missing = after.shift( );
+      after = after.pop( );
+    }
+    if (/.*.json$/g.test(missing)) {
+      var p = './schemas/' + missing;
       var S = require(p);
-      validator.addSchema(S, missing);
+      var u = base + missing;
+      if (hash) {
+        u = u + '#' + after;
+        var key = after.split('definitions/').pop( );
+        S = S.definitions[key];
+      }
+      S.id = u;
+      validator.addSchema(S, u);
       importMissing( );
     }
   }
@@ -80,7 +101,7 @@ function stream (validate) {
 
 if (!module.parent) {
   var validator = create( );
-  var incoming = process.argv[2];
+  var incoming = process.argv.slice(2).shift( ) || '-';
   if (incoming == '-' || !incoming) {
     incoming = process.stdin;
     incoming.resume( );
