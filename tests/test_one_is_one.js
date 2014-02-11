@@ -3,8 +3,8 @@ var util = require('util');
 
 describe("validator schema", function ( ) {
   var types = [
-      // 'basal-inferred.json'
-      'diabetes/basal-segment.json'
+      // 'diabetes/basal-inferred.json'
+    , 'diabetes/basal-segment.json'
     , 'diabetes/basal-temp.json'
     , 'diabetes/bolus-dual.json'
     , 'diabetes/bolus-normal.json'

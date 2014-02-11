@@ -7,7 +7,7 @@
   "type": "array",
   "items": {
     "anyOf": [
-      { "$ref": "diabetes/bolus/pump.json" },
+      { "$ref": "diabetes/bolus/index.json" },
       { "$ref": "diabetes/basal/segment.json" },
       { "$ref": "diabetes/basal/temp.json" },
       { "$ref": "diabetes/carbs.json" },

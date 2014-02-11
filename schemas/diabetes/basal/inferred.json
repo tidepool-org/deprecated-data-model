@@ -27,9 +27,8 @@
 			"required":false
 		},
 		"inferred": {
-			"type":"boolean",
+			"enum": [ true ],
 			"id": "http://jsonschema.net/inferred",
-      "default": true,
 			"required":true
 		},
 		"start": {
