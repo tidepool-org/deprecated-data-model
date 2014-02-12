@@ -18,10 +18,10 @@
 		"recommended": {
 			"type":"number",
 			"id": "http://jsonschema.net/recommended",
-			"required":true
+			"required":false
 		},
 		"type": {
-			"enum": ["bolus", "bolus-dual"],
+			"enum": ["bolus", "bolus-dual", "bolus-normal"],
 			"required":true
 		},
 		"value": {
