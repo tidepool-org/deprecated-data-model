@@ -559,7 +559,7 @@ class Basal:
 
     def generate_temp_basals(self):
 
-        day_skip = range(0,4)
+        day_skip = range(0,1)
 
         durations = range(30, 510, 30)
 
@@ -568,7 +568,7 @@ class Basal:
 
         current_datetime = start
 
-        basal_range = (min(self.schedule.values()) * 100, max(self.schedule.values()) * 100)
+        basal_range = (min(self.schedule.values()) * 100, (max(self.schedule.values()) + max(self.schedule.values()) / 2) * 100)
 
         basal_possibilities = [x / 100.0 for x in range(0, int(basal_range[1]), 25)]
 
@@ -658,7 +658,7 @@ def main():
     parser.add_argument('-d', '--dexcom', action='store', dest='dexcom_segments', help='name of file containing indexed continuous segments of Dexcom data;\ndefault is indexed_segments.json')
     parser.add_argument('-n', '--num_days', action='store', dest='num_days', default=30, type=int, help='number of days of demo data to generate;\ndefault is 30')
     parser.add_argument('-o', '--output_file', action='store', dest='output_file', default='device-data.json', help='name of output JSON file;\ndefault is device-data.json')
-
+    parser.add_argument('-q', '--quiet_messages', action='store_true', dest='quiet_messages', help='use this flag to turn off messages when bacon ipsum is being slow')
     args = parser.parse_args()
 
     dex = Dexcom(args.dexcom_segments, args.num_days)
@@ -672,9 +672,11 @@ def main():
 
     basal = Basal({}, boluses.json, meals.carbs)
 
-    messages = Messages(smbg)
-
-    all_json = dex.json + smbg.json + basal.json + meals.json + boluses.json + messages.json
+    if args.quiet_messages:
+        all_json = dex.json + smbg.json + basal.json + meals.json + boluses.json
+    else:
+        messages = Messages(smbg)
+        all_json = dex.json + smbg.json + basal.json + meals.json + boluses.json + messages.json
 
     print_JSON(all_json, args.output_file)
     print()
