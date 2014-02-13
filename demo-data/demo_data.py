@@ -559,7 +559,7 @@ class Basal:
 
     def generate_temp_basals(self):
 
-        day_skip = range(0,1)
+        day_skip = range(1,2)
 
         durations = range(30, 510, 30)
 
