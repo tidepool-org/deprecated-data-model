@@ -1,0 +1,12 @@
+{
+  "title": "Animas extensions",
+  "name": "Animas",
+  "description": "JSON version of Animas records from Diasend.",
+  "$schema": "http://json-schema.org/draft-03/schema#",
+  "id": "http://tidepool-org.github.io/data-model/schemas/vendors/animas.json",
+  "type": "array",
+  "items": {
+    [
+    ]
+  }
+}
