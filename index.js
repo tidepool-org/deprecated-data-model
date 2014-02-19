@@ -18,7 +18,7 @@ function getSchemaFor (o) {
   }
   switch (o) {
     case 'bolus':
-      out = diabetes.bolusNormal;
+      out = diabetes.bolus;
       break;
     case 'basal':
       out = diabetes.basal;

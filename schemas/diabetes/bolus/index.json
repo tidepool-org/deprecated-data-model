@@ -1,17 +1,15 @@
 {
-  "title": "Basal use",
-  "name": "Basal",
-  "description": "basal usage",
+  "title": "Insulin use",
+  "name": "Bolus",
+  "description": "Insulin usage expressed as bolus doses",
   "$schema": "http://json-schema.org/draft-03/schema#",
   "id": "http://tidepool-org.github.io/data-model/schemas/diabetes/bolus/index.json",
   "type": "object",
-  "properties": {
-    "anyOf": [
+    "oneOf": [
       { "$ref": "./dual.json" },
       { "$ref": "./pump.json" },
       { "$ref": "./square.json" },
       { "$ref": "./normal.json" }
     ]
-  }
 }
 

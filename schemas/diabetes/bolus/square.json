@@ -36,7 +36,7 @@
 			"required":true
 		},
 		"type": {
-			"enum": [ "bolus", "bolus-square" ],
+			"enum": [ "bolus", "bolus-dual/square" ],
 			"id": "http://jsonschema.net/bolus/square/type",
 			"required":true
 		},
