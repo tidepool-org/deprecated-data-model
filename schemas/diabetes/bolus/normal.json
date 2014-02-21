@@ -21,7 +21,7 @@
 			"required":false
 		},
 		"type": {
-			"enum": ["bolus", "bolus-dual/normal", "bolus-normal"],
+			"enum": ["bolus", "bolus-dual", "bolus-normal"],
 			"required":true
 		},
 		"value": {

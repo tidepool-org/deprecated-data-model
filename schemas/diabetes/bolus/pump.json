@@ -6,29 +6,30 @@
   "properties":{
     "deviceTime": {
       "type":"string",
+      "id": "types/deviceTime",
       "description": "time observed by device, ISO 8601 sans timezone",
       "required":true
     },
     "recommended": {
       "type":"number",
-      "id": "http://jsonschema.net/bolus/pump/recommended",
+      "id": "http://jsonschema.net/recommended",
       "description": "Amount of insulin recommended by bolus wizard",
       "required":false
     },
     "units": {
       "type": "string",
-      "id": "http://jsonschema.net/type/bolus/pump/units",
+      "id": "http://jsonschema.net/type/units",
       "default": "U",
       "required": false
     },
     "type": {
       "enum": ["bolus"],
-      "id": "http://jsonschema.net/type/bolus/pump",
+      "id": "http://jsonschema.net/type/bolus",
       "required":true
     },
     "value": {
       "type":"number",
-      "id": "http://jsonschema.net/type/bolus/pump/value/",
+      "id": "http://jsonschema.net/type/value/",
       "required":true
     }
   }

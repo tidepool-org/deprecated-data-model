@@ -6,46 +6,46 @@
 	"properties":{
 		"deviceTime": {
 			"type":"string",
-			"id": "http://jsonschema.net/bolus/dual/deviceTime",
+			"id": "http://jsonschema.net/deviceTime",
 			"required":true
 		},
 		"duration": {
 			"type":"number",
-			"id": "http://jsonschema.net/bolus/dual/duration",
+			"id": "http://jsonschema.net/duration",
 			"required":true
 		},
 		"extendedDelivery": {
 			"type":"number",
-			"id": "http://jsonschema.net/bolus/dual/extendedDelivery",
+			"id": "http://jsonschema.net/extendedDelivery",
 			"required":true
 		},
 		"extended": {
 			"type":"boolean",
-			"id": "http://jsonschema.net/bolus/dual/extended",
+			"id": "http://jsonschema.net/extended",
 			"required":true
 		},
 		"id": {
 			"type":"string",
-			"id": "http://jsonschema.net/bolus/dual/id",
+			"id": "http://jsonschema.net/id",
 			"required":false
 		},
 		"initialDelivery": {
 			"type":"number",
-			"id": "http://jsonschema.net/bolus/dual/initialDelivery",
+			"id": "http://jsonschema.net/initialDelivery",
 			"required":true
 		},
 		"recommended": {
 			"type":"number",
-			"id": "http://jsonschema.net/bolus/dual/recommended",
+			"id": "http://jsonschema.net/recommended",
 			"required":true
 		},
 		"type": {
-			"enum": ["bolus", "bolus-dual", "bolus-dual/square"],
+			"enum": ["bolus", "bolus-dual"],
 			"required":true
 		},
 		"value": {
 			"type":"number",
-			"id": "http://jsonschema.net/bolus/dual/value",
+			"id": "http://jsonschema.net/value",
 			"required":true
 		}
 	}
