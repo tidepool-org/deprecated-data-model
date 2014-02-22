@@ -6,6 +6,10 @@
   "scripts": {
     "test": "make test"
   },
+  "directories": {
+    "schemas": "./schemas/",
+    "lib": "./lib/"
+  },
   "bin": {
     "tidepool-validate": "bin/tidepool-validate"
   },
