@@ -12,6 +12,7 @@ describe("validator schema", function ( ) {
     , 'diabetes/carbs.json'
     , 'diabetes/cbg.json'
     , 'diabetes/smbg.json'
+    , 'vendors/medtronic/square.json'
     , 'message.json'
   ];
   function pathFor (t) {

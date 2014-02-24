@@ -1,0 +1,12 @@
+{
+  "title": "Medtronic extensions",
+  "name": "Medtronic",
+  "description": "JSON version of Medtronic records from Carelink csv.",
+  "$schema": "http://json-schema.org/draft-03/schema#",
+  "id": "http://tidepool-org.github.io/data-model/schemas/vendors/medtronic.json",
+  "type": "array",
+  "items": {
+    [
+    ]
+  }
+}

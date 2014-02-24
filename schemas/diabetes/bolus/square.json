@@ -11,7 +11,7 @@
 			"required":true
 		},
 		"duration": {
-			"type":"number",
+			"type":["string", "number"],
 			"id": "http://jsonschema.net/bolus/square/duration",
 			"required":true
 		},
@@ -35,13 +35,18 @@
 			"id": "http://jsonschema.net/bolus/square/recommended",
 			"required":true
 		},
+		"programmed": {
+			"type":"number",
+			"id": "http://jsonschema.net/bolus/programmed",
+			"required":false
+		},
 		"type": {
-			"enum": [ "bolus", "bolus-square" ],
+			"enum": [ "bolus", "bolus-dual/square" ],
 			"id": "http://jsonschema.net/bolus/square/type",
 			"required":true
 		},
 		"value": {
-			"type":"number",
+			"type": ["string", "number"],
 			"id": "http://jsonschema.net/bolus/square/value",
 			"required":true
 		}

@@ -1,0 +1,8 @@
+{
+  "value": "1.7",
+  "bolus": 1.7,
+  "programmed": 2.3,
+  "type": "bolus-dual/square",
+  "deviceTime": "2014-01-25T23:37:34",
+  "duration": "3600000"
+}
