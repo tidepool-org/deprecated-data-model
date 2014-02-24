@@ -1,0 +1,13 @@
+{
+  "value": "5.1",
+  "smbg": "137",
+  "carbs": "64",
+  "carb_units": "grams",
+  "carb_ratio": "13",
+  "sensitivity": "45",
+  "recommended": "5.1",
+  "correction": "0.2",
+  "food": "4.9",
+  "type": "wizard",
+  "deviceTime": "2014-02-09T20:45:16"
+}
