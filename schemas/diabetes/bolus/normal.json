@@ -20,6 +20,11 @@
 			"id": "http://jsonschema.net/recommended",
 			"required":false
 		},
+		"programmed": {
+			"type":"number",
+			"id": "http://jsonschema.net/bolus/programmed",
+			"required":false
+		},
 		"type": {
 			"enum": ["bolus", "bolus-dual/normal", "bolus-normal"],
 			"required":true
