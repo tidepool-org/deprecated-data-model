@@ -35,6 +35,9 @@ function getSchemaFor (o) {
     case 'medtronic/bolus':
       out = diabetes.medtronic.bolus;
       break;
+    case 'medtronic/wizard':
+      out = diabetes.medtronic.wizard;
+      break;
     case 'message':
       out = diabetes.message;
       break;
