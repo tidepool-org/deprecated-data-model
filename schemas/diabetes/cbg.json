@@ -24,9 +24,14 @@
 			"required":true
 		},
 		"value": {
-			"type":"number",
+			"type": [ "string", "number" ],
 			"id": "http://jsonschema.net/cbg/value",
 			"required":true
+		},
+		"cbg": {
+			"type":"number",
+			"id": "http://jsonschema.net/cbg/cbg",
+			"required":false
 		}
 	}
 }

@@ -4,6 +4,12 @@ data-model
 Hosting data files, example code, and documentation for Tidepool's
 data model.
 
+## Idea Box
+
+This is just a dump of links to other places where people have listed out potential formats for diabetes data models.
+
+* https://github.com/thedamon/opendatabetes/blob/master/DataFormat.md
+
 ## Install
 [![Build Status](https://travis-ci.org/tidepool-org/data-model.png?branch=master)](https://travis-ci.org/tidepool-org/data-model)
 
