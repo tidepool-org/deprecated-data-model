@@ -30,14 +30,9 @@
 			"required":false
 		},
 		"value": {
-			"type": [ "string", "number" ],
+			"type": "number",
 			"id": "http://jsonschema.net/carbs/value",
 			"required":true
-		},
-		"carbs": {
-			"type":"number",
-			"id": "http://jsonschema.net/carbs/carbs",
-			"required":false
 		}
 	}
 }

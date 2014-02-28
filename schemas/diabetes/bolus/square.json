@@ -46,7 +46,7 @@
 			"required":true
 		},
 		"value": {
-			"type": ["string", "number"],
+			"type": "number",
 			"id": "http://jsonschema.net/bolus/square/value",
 			"required":true
 		}
