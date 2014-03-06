@@ -25,9 +25,14 @@
 			"required":true
 		},
 		"value": {
-			"type": "number",
+			"type": [ "string", "number" ],
 			"id": "http://jsonschema.net/smbg/value",
 			"required":true
+		},
+		"smbg": {
+			"type":"number",
+			"id": "http://jsonschema.net/value",
+			"required":false
 		}
 	}
 }
