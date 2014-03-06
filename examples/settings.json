@@ -2,6 +2,11 @@
     "type": "settings",
     "deviceTime": "2014-02-17T12:12:12",
     "activeBasalSchedule": "standard",
+    "units": {
+	"carb": "grams",
+	"insulinSensitivity": "mg dL",
+	"bgTarget": "mg dL"
+    },
     "basalSchedules": {
 	"standard": [ 
 	    { "rate": 0.8, "start": 0 },
@@ -15,18 +20,18 @@
 	]
     },
     "carbRatio" : [
-	{ "amount": 12, "units": "grams", "start": 0 },
-	{ "amount": 10, "units": "grams", "start": 21600000 },
+	{ "amount": 12, "start": 0 },
+	{ "amount": 10, "start": 21600000 },
 	...
     ],
     "insulinSensitivity" : [
-	{ "amount": 65, "units": "mg dL", "start": 0 },
-	{ "amount": 45, "units": "mg dL", "start": 18000000 },
+	{ "amount": 65, "start": 0 },
+	{ "amount": 45, "start": 18000000 },
 	    ...
     ],
     "bgTarget": [
-	{ "low": 100, "high": 120, "units": "mg dL", "start": 0 },
-	{ "low": 90, "high": 110, "units": "mg dL", "start": 18000000 },
+	{ "low": 100, "high": 120, "start": 0 },
+	{ "low": 90, "high": 110, "start": 18000000 },
 	    ...
     ]
 }
