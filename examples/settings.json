@@ -12,6 +12,7 @@
 	    { "rate": 0.95, "start": 0 },
 	    { "rate": 0.9, "start": 3600000 },
 	    ...
+	]
     },
     "carbRatio" : [
 	{ "amount": 12, "units": "grams", "start": 0 },
@@ -19,13 +20,13 @@
 	...
     ],
     "insulinSensitivity" : [
-	{ "amount": 65, "start": 0 },
-	{ "amount": 45, "start": 18000000 },
+	{ "amount": 65, "units": "mg dL", "start": 0 },
+	{ "amount": 45, "units": "mg dL", "start": 18000000 },
 	    ...
     ],
     "bgTarget": [
-	{ "low": 100, "high": 120, "start": 0 },
-	{ "low": 90, "high": 110, "start": 18000000 },
+	{ "low": 100, "high": 120, "units": "mg dL", "start": 0 },
+	{ "low": 90, "high": 110, "units": "mg dL", "start": 18000000 },
 	    ...
     ]
 }
