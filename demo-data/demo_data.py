@@ -640,6 +640,11 @@ def print_JSON(all_json, out_file):
         except KeyError:
             pass
 
+    # rename 'id' to '_id'
+    for a in all_json:
+        a['_id'] = a['id']
+        del a['id']
+
     # print()
     # print("Preview: first 50 data points...")
     # print()
