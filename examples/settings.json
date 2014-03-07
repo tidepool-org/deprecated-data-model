@@ -4,8 +4,7 @@
     "activeBasalSchedule": "standard",
     "units": {
 	"carb": "grams",
-	"insulinSensitivity": "mg dL",
-	"bgTarget": "mg dL"
+	"bg": "mg dL"
     },
     "basalSchedules": {
 	"standard": [ 
