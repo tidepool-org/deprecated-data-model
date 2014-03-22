@@ -491,7 +491,7 @@ class Basal:
 
     def _get_difference(self, t1, t2):
 
-        d = dt.now()
+        d = dt.now() - td(days=30)
 
         dt1 = dt(d.year, d.month, d.day, t1.hour, t1.minute, t1.second)
 
@@ -621,6 +621,17 @@ def get_dates(data):
 
 def print_JSON(all_json, out_file):
 
+    # rename 'id' to '_id'
+    for a in all_json:
+        a['_id'] = a['id']
+        del a['id']
+
+    # add deviceId field to smbg, boluses, carbs, and basal-rate-segments
+    pump_fields = ['smbg', 'carbs', 'bolus', 'basal-rate-segment']
+    for a in all_json:
+        if a['type'] in pump_fields:
+            a['deviceId'] = 'Paradigm Revel - 523'
+
     # temporarily add a device time to messages to enable sorting
     for a in all_json:
         try:
@@ -654,11 +665,6 @@ def print_JSON(all_json, out_file):
             del a['deviceTime']
         except KeyError:
             pass
-
-    # rename 'id' to '_id'
-    for a in all_json:
-        a['_id'] = a['id']
-        del a['id']
 
     # print()
     # print("Preview: first 50 data points...")
