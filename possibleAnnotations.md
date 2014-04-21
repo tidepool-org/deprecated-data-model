@@ -1,6 +1,6 @@
 Possible annotations are
 
-* basal/off-settings-rate: happens on basal rates do not match the currently believed settings
+* basal/off-schedule-rate: happens on basal rates do not match the currently believed settings
 * settings-mismatch/basal: happens when the basal portions of a settings object do not line up with what the settings events say they should. We updated the basal schedules anyway (primarily happens on pump replacement with carelink)
 * settings-mismatch/wizard: same as "basal" but with the wizard settings so like IC and carbRatio and stuff
 * settings-mismatch/activeSchedule: same as "basal" but with the currently active schedule
