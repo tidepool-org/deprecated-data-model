@@ -1,6 +1,7 @@
 Possible annotations are
 
 * basal/off-schedule-rate: happens on basal rates do not match the currently believed settings
+    * We've seen this when the user changes pumps (e.g. for a repair), and the new pump basal settings are different than the old settings, but both pumps are uploaded to CareLink. There may be other causes for this but we haven't seen them.
 * settings-mismatch/basal: happens when the basal portions of a settings object do not line up with what the settings events say they should. We updated the basal schedules anyway (primarily happens on pump replacement with carelink)
 * settings-mismatch/wizard: same as "basal" but with the wizard settings so like IC and carbRatio and stuff
 * settings-mismatch/activeSchedule: same as "basal" but with the currently active schedule
