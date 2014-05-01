@@ -621,10 +621,9 @@ def get_dates(data):
 
 def print_JSON(all_json, out_file):
 
-    # rename 'id' to '_id'
+    # add an _id field as well
     for a in all_json:
-        a['_id'] = a['id']
-        del a['id']
+        a['_id'] = str(uuid.uuid4())
 
     # add deviceId field to smbg, boluses, carbs, and basal-rate-segments
     pump_fields = ['smbg', 'carbs', 'bolus', 'basal-rate-segment']
